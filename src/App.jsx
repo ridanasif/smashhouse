@@ -5,16 +5,20 @@ import About from "./components/About"
 import HookedBanner from "./components/HookedBanner"
 import Footer from "./components/Footer"
 import FindUs from "./components/FindUs"
+import Menu from "./components/Menu"
+import TopBanner from "./components/TopBanner"
+
 function App() {
 
   return (
     <div className="flex flex-col min-h-screen">
+      <TopBanner />
       <Navbar />
       <Carousel />
       <Ticker />
       <About />
-      <div id="menu" />
       <HookedBanner />
+      <Menu />
       <FindUs />
       <Footer />
     </div>

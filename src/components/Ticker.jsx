@@ -29,7 +29,7 @@ const Ticker = ({ items = [
                     >
                         {items.map((item, index) => (
                             <div key={index} className="flex items-center">
-                                <span className="text-white font-bold text-xl md:text-3xl tracking-wider uppercase font-prompt">
+                                <span className="ticker-text text-white">
                                     {item}
                                 </span>
                                 <PiStarFourFill className="text-white mx-4 md:mx-8 w-6 h-6 md:w-8 md:h-8" />

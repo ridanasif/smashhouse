@@ -19,19 +19,19 @@ const Footer = () => {
     return (
         <footer className="bg-black text-white pt-16 pb-8 border-t border-white/10">
             <div className="container mx-auto px-4">
-                <div className="flex flex-col md:flex-row justify-between items-start gap-12 mb-16">
+                <div className="flex flex-col md:flex-row justify-between items-center md:items-start gap-12 mb-16 text-center md:text-left">
                     {/* Brand Section */}
                     <div className="w-full md:w-1/3">
                         <img
                             src="/images/logo.webp"
                             alt="smash house logo"
-                            className="w-24 mb-6 rounded-full"
+                            className="w-24 mb-6 rounded-full mx-auto md:mx-0"
                         />
-                        <p className="text-gray-400 leading-relaxed mb-6 max-w-sm">
+                        <p className="text-gray-400 leading-relaxed mb-6 max-w-sm mx-auto md:mx-0">
                             Bringing the authentic smash burger experience to Portugal.
                             Crispy edges, juicy patties, and unforgettable flavor in every bite.
                         </p>
-                        <div className="flex gap-4">
+                        <div className="flex gap-4 justify-center md:justify-start">
                             {socials.map((social, index) => (
                                 <a
                                     key={index}
@@ -47,8 +47,8 @@ const Footer = () => {
                     {/* Links & Contact Group */}
                     <div className="w-full md:w-2/3 grid grid-cols-2 gap-8">
                         {/* Quick Links */}
-                        <div>
-                            <h3 className="text-lg font-bold mb-6 text-orange uppercase tracking-wider">Quick Links</h3>
+                        <div className="text-center md:text-left">
+                            <h3 className="footer-heading mb-6">Quick Links</h3>
                             <ul className="space-y-4">
                                 {links.map((link) => (
                                     <li key={link.name}>
@@ -64,8 +64,8 @@ const Footer = () => {
                         </div>
 
                         {/* Contact/Location */}
-                        <div>
-                            <h3 className="text-lg font-bold mb-6 text-orange uppercase tracking-wider">Find Us</h3>
+                        <div className="text-center md:text-left">
+                            <h3 className="footer-heading mb-6">Find Us</h3>
                             <p className="text-gray-400 mb-4 hover:text-white transition-colors">
                                 Odivelas, Lisbon<br />
                                 Portugal

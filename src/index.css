@@ -8,17 +8,97 @@
 
 html {
     scroll-behavior: smooth;
-    /* Mobile: logo 64px + py-2 (16px) = 80px */
-    scroll-padding-top: 80px;
+    /* Mobile: TopBanner ~32px + Navbar 80px = 112px */
+    scroll-padding-top: 112px;
 }
 
 @media (min-width: 768px) {
     html {
-        /* Desktop: logo 80px + py-2 (16px) = 96px */
-        scroll-padding-top: 96px;
+        /* Desktop: TopBanner ~32px + Navbar 96px = 128px */
+        scroll-padding-top: 128px;
     }
 }
 
 body {
     font-family: 'Prompt', sans-serif;
+}
+
+/* ===== TYPOGRAPHY SYSTEM ===== */
+
+/* Section Labels - Small uppercase text above headings */
+.section-label {
+    font-size: 0.875rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--color-orange);
+}
+
+/* Hero Heading - Largest, for hero/banner sections */
+.heading-hero {
+    font-size: clamp(3rem, 10vw, 9rem);
+    font-weight: 900;
+    line-height: 0.85;
+    letter-spacing: -0.02em;
+    text-transform: uppercase;
+}
+
+/* Section Heading - For main section titles */
+.heading-section {
+    font-size: clamp(2.5rem, 6vw, 4.5rem);
+    font-weight: 900;
+    line-height: 1;
+    letter-spacing: -0.02em;
+    text-transform: uppercase;
+}
+
+/* Subheading - Secondary headings */
+.heading-sub {
+    font-size: clamp(1.25rem, 3vw, 1.75rem);
+    font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: -0.01em;
+}
+
+/* Body Text - Standard paragraphs */
+.text-body {
+    font-size: 1.125rem;
+    font-weight: 400;
+    line-height: 1.7;
+    color: #4B5563;
+    /* gray-600 */
+}
+
+/* Subtitle - Below section headings */
+.text-subtitle {
+    font-size: 0.875rem;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--color-orange);
+}
+
+/* Nav Links */
+.nav-link {
+    font-size: 1rem;
+    font-weight: 500;
+    letter-spacing: 0;
+    transition: color 0.2s ease;
+}
+
+/* Footer Heading */
+.footer-heading {
+    font-size: 1.125rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--color-orange);
+}
+
+/* Ticker Text */
+.ticker-text {
+    font-size: clamp(1.25rem, 3vw, 1.875rem);
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
 }

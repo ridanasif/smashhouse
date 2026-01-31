@@ -13,17 +13,17 @@ const About = () => {
                             viewport={{ once: true, margin: "-100px" }}
                             transition={{ duration: 0.6 }}
                         >
-                            <span className="text-orange font-bold text-sm tracking-widest uppercase block">
+                            <span className="section-label block">
                                 About Us
                             </span>
-                            <h2 className="text-5xl md:text-7xl font-black leading-tight mb-8 text-black">
+                            <h2 className="heading-section mb-8 text-black">
                                 BIG BURGERS. <br />
                                 <span className="text-orange">FULL SATISFACTION.</span>
                             </h2>
-                            <p className="text-gray-600 text-lg leading-relaxed mb-6">
+                            <p className="text-body mb-6">
                                 Born in the vibrant streets of <span className="font-bold text-black">Lisbon, Portugal</span>, smash house started with a simple obsession: perfecting the crust.
                             </p>
-                            <p className="text-gray-600 text-lg leading-relaxed">
+                            <p className="text-body">
                                 We believe a burger isn't just food; it's an experience. Our journey began in a small kitchen in Odivelas, where we smashed our first patty, locking in that irresistible flavor. Today, we bring that authentic, juicy, crispy-edged goodness to every plate, serving not just a meal, but a piece of our passion.
                             </p>
                         </motion.div>

@@ -68,7 +68,7 @@ const Carousel = () => {
                             animate={{ y: 0, opacity: 1 }}
                             transition={{ delay: 0.2, duration: 0.8 }}
                         >
-                            <h1 className="text-7xl md:text-9xl font-black leading-[0.85] tracking-tighter uppercase">
+                            <h1 className="heading-hero text-white">
                                 <div className="block">Smash.</div>
                                 <div className="block">Sear.</div>
                                 <div className="block">Repeat.</div>
