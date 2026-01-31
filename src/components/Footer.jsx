@@ -1,20 +1,21 @@
 import { FaInstagram, FaFacebookF, FaTiktok } from "react-icons/fa";
 
+// Static data
+const LINKS = [
+    { name: "Home", href: "#" },
+    { name: "About", href: "#about" },
+    { name: "Menu", href: "#menu" },
+    { name: "Find Us", href: "#find-us" },
+];
+
+const SOCIALS = [
+    { icon: FaInstagram, href: "#" },
+    { icon: FaFacebookF, href: "#" },
+    { icon: FaTiktok, href: "#" },
+];
+
 const Footer = () => {
     const currentYear = new Date().getFullYear();
-
-    const links = [
-        { name: "Home", href: "#" },
-        { name: "About", href: "#about" },
-        { name: "Menu", href: "#menu" },
-        { name: "Find Us", href: "#find-us" },
-    ];
-
-    const socials = [
-        { icon: FaInstagram, href: "#" },
-        { icon: FaFacebookF, href: "#" },
-        { icon: FaTiktok, href: "#" },
-    ];
 
     return (
         <footer className="bg-black text-white pt-16 pb-8 border-t border-white/10">
@@ -32,7 +33,7 @@ const Footer = () => {
                             Crispy edges, juicy patties, and unforgettable flavor in every bite.
                         </p>
                         <div className="flex gap-4 justify-center md:justify-start">
-                            {socials.map((social, index) => (
+                            {SOCIALS.map((social, index) => (
                                 <a
                                     key={index}
                                     href={social.href}
@@ -50,7 +51,7 @@ const Footer = () => {
                         <div className="text-center md:text-left">
                             <h3 className="footer-heading mb-6">Quick Links</h3>
                             <ul className="space-y-4">
-                                {links.map((link) => (
+                                {LINKS.map((link) => (
                                     <li key={link.name}>
                                         <a
                                             href={link.href}

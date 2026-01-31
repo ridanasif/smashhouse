@@ -1,14 +1,29 @@
 import { motion } from 'framer-motion';
 import { PiStarFourFill } from "react-icons/pi";
 
-const Ticker = ({ items = [
+// Animation config defined outside
+const tickerAnimation = {
+    initial: { x: 0 },
+    animate: { x: "-100%" },
+    transition: {
+        duration: 20,
+        repeat: Infinity,
+        ease: "linear",
+        repeatType: "loop"
+    }
+};
+
+// Static data
+const DEFAULT_ITEMS = [
     "AUTHENTIC SMASH BURGERS",
     "100% HALAL",
     "SMASH IT",
     "BURGERS DONE RIGHT",
     "OPEN DAILY 12PM - 11PM",
     "ORDER ON UBER EATS"
-] }) => {
+];
+
+const Ticker = ({ items = DEFAULT_ITEMS }) => {
 
     return (
         <div className="bg-orange py-4 overflow-hidden border-y border-black/10">
@@ -17,14 +32,9 @@ const Ticker = ({ items = [
                 {[...Array(2)].map((_, i) => (
                     <motion.div
                         key={i}
-                        initial={{ x: 0 }}
-                        animate={{ x: "-100%" }}
-                        transition={{
-                            duration: 20,
-                            repeat: Infinity,
-                            ease: "linear",
-                            repeatType: "loop"
-                        }}
+                        initial={tickerAnimation.initial}
+                        animate={tickerAnimation.animate}
+                        transition={tickerAnimation.transition}
                         className="flex items-center"
                     >
                         {items.map((item, index) => (

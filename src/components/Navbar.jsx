@@ -1,7 +1,23 @@
 import { useState, useEffect } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 import { LuShoppingBag, LuMenu, LuX } from "react-icons/lu";
 import Button from "./Button";
+
+// Animation variants defined outside
+const logoAnimation = {
+    initial: { opacity: 0, x: -20 },
+    animate: { opacity: 1, x: 0 }
+};
+
+// Static data
+const NAV_LINKS = [
+    { name: "Home", href: "#" },
+    { name: "About", href: "#about" },
+    { name: "Menu", href: "#menu" },
+    { name: "Find Us", href: "#find-us" },
+];
+
+const ORDER_URL = "https://www.ubereats.com/store/smash-house-odivelas/KC9OWAyVUySObwDbwi-11A?diningMode=DELIVERY&utm_source=ig&utm_medium=social&utm_content=link_in_bio";
 
 const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
@@ -14,15 +30,6 @@ const Navbar = () => {
         window.addEventListener("scroll", handleScroll);
         return () => window.removeEventListener("scroll", handleScroll);
     }, []);
-
-    const navLinks = [
-        { name: "Home", href: "#" },
-        { name: "About", href: "#about" },
-        { name: "Menu", href: "#menu" },
-        { name: "Find Us", href: "#find-us" },
-    ];
-
-    const orderUrl = "https://www.ubereats.com/store/smash-house-odivelas/KC9OWAyVUySObwDbwi-11A?diningMode=DELIVERY&utm_source=ig&utm_medium=social&utm_content=link_in_bio";
 
     const scrollToSection = (e, href) => {
         e.preventDefault();
@@ -48,8 +55,8 @@ const Navbar = () => {
                 <div className="flex justify-between items-center">
                     {/* Logo */}
                     <motion.div
-                        initial={{ opacity: 0, x: -20 }}
-                        animate={{ opacity: 1, x: 0 }}
+                        initial={logoAnimation.initial}
+                        animate={logoAnimation.animate}
                         className="shrink-0"
                     >
                         <a href="#" onClick={(e) => scrollToSection(e, "#")} className="block">
@@ -60,7 +67,7 @@ const Navbar = () => {
                     {/* Desktop Nav */}
                     <nav className="hidden md:flex items-center space-x-8">
                         <ul className="flex space-x-8 items-center">
-                            {navLinks.map((link) => (
+                            {NAV_LINKS.map((link) => (
                                 <li key={link.name}>
                                     <a
                                         href={link.href}
@@ -76,7 +83,7 @@ const Navbar = () => {
                         <Button
                             text="Order Now"
                             icon={LuShoppingBag}
-                            href={orderUrl}
+                            href={ORDER_URL}
                             target="_blank"
                         />
                     </nav>
@@ -99,7 +106,7 @@ const Navbar = () => {
                     }`}
             >
                 <div className="container mx-auto px-4 flex flex-col space-y-4 w-full">
-                    {navLinks.map((link) => (
+                    {NAV_LINKS.map((link) => (
                         <a
                             key={link.name}
                             href={link.href}
@@ -113,7 +120,7 @@ const Navbar = () => {
                         <Button
                             text="Order Now"
                             icon={LuShoppingBag}
-                            href={orderUrl}
+                            href={ORDER_URL}
                             target="_blank"
                             className="w-full"
                         />

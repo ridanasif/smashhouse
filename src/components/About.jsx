@@ -1,5 +1,27 @@
 import { motion } from 'framer-motion';
 
+// Animation variants defined outside
+const textAnimation = {
+    initial: { opacity: 0, y: 30 },
+    whileInView: { opacity: 1, y: 0 },
+    viewport: { once: true, margin: "-100px" },
+    transition: { duration: 0.6 }
+};
+
+const backImageAnimation = {
+    initial: { opacity: 0, x: -50 },
+    whileInView: { opacity: 1, x: 0 },
+    viewport: { once: true },
+    transition: { duration: 0.8, delay: 0.2 }
+};
+
+const frontImageAnimation = {
+    initial: { opacity: 0, y: 50 },
+    whileInView: { opacity: 1, y: 0 },
+    viewport: { once: true },
+    transition: { duration: 0.8, delay: 0.4 }
+};
+
 const About = () => {
     return (
         <section id="about" className="py-20 md:py-32 bg-[#fffbf2] overflow-hidden">
@@ -7,12 +29,7 @@ const About = () => {
                 <div className="flex flex-col md:flex-row items-center gap-16">
                     {/* Text Section */}
                     <div className="w-full md:w-1/2">
-                        <motion.div
-                            initial={{ opacity: 0, y: 30 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true, margin: "-100px" }}
-                            transition={{ duration: 0.6 }}
-                        >
+                        <motion.div {...textAnimation}>
                             <span className="section-label block">
                                 About Us
                             </span>
@@ -33,10 +50,7 @@ const About = () => {
                     <div className="w-full md:w-1/2 relative h-[400px] md:h-[600px] flex items-center justify-center">
                         {/* Back Image (Left/Top) */}
                         <motion.div
-                            initial={{ opacity: 0, x: -50 }}
-                            whileInView={{ opacity: 1, x: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ duration: 0.8, delay: 0.2 }}
+                            {...backImageAnimation}
                             className="absolute left-0 top-0 w-3/4 md:w-2/3 h-3/4 overflow-hidden rounded-2xl"
                         >
                             <img
@@ -48,10 +62,7 @@ const About = () => {
 
                         {/* Front Image (Right/Bottom) */}
                         <motion.div
-                            initial={{ opacity: 0, y: 50 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ duration: 0.8, delay: 0.4 }}
+                            {...frontImageAnimation}
                             className="absolute right-0 bottom-0 w-3/4 md:w-2/3 h-3/4 overflow-hidden rounded-2xl shadow-2xl"
                         >
                             <img

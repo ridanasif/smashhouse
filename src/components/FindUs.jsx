@@ -1,8 +1,9 @@
 import Ticker from './Ticker';
 
+// Static data
+const VISIT_US_ITEMS = Array(10).fill("VISIT US");
+
 const FindUs = () => {
-    // Determine number of repeats based on rough estimation to ensure full width coverage
-    const visitUsItems = Array(10).fill("VISIT US");
 
     return (
         <section id="find-us" className="relative w-full h-[60vh] md:h-screen bg-gray-100">
@@ -23,7 +24,7 @@ const FindUs = () => {
 
             {/* Overlay Ticker - Positioned at Top */}
             <div className="absolute top-0 left-0 right-0 z-10">
-                <Ticker items={visitUsItems} />
+                <Ticker items={VISIT_US_ITEMS} />
             </div>
         </section>
     );
