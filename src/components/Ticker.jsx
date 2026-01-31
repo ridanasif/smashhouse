@@ -1,16 +1,14 @@
-import React from 'react';
 import { motion } from 'framer-motion';
 import { PiStarFourFill } from "react-icons/pi";
 
-const Ticker = () => {
-    const items = [
-        "AUTHENTIC SMASH BURGERS",
-        "100% HALAL",
-        "SMASH IT",
-        "BURGERS DONE RIGHT",
-        "OPEN DAILY 12PM - 11PM",
-        "ORDER ON UBER EATS"
-    ];
+const Ticker = ({ items = [
+    "AUTHENTIC SMASH BURGERS",
+    "100% HALAL",
+    "SMASH IT",
+    "BURGERS DONE RIGHT",
+    "OPEN DAILY 12PM - 11PM",
+    "ORDER ON UBER EATS"
+] }) => {
 
     return (
         <div className="bg-orange py-4 overflow-hidden border-y border-black/10">

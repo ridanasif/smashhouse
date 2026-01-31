@@ -6,6 +6,19 @@
     --color-orange: #FF3B2F;
 }
 
+html {
+    scroll-behavior: smooth;
+    /* Mobile: logo 64px + py-2 (16px) = 80px */
+    scroll-padding-top: 80px;
+}
+
+@media (min-width: 768px) {
+    html {
+        /* Desktop: logo 80px + py-2 (16px) = 96px */
+        scroll-padding-top: 96px;
+    }
+}
+
 body {
     font-family: 'Prompt', sans-serif;
 }
