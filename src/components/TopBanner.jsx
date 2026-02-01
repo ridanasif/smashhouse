@@ -1,6 +1,9 @@
 import { LuPhone } from 'react-icons/lu';
+import { useLanguage } from '../context/LanguageContext';
 
 const TopBanner = () => {
+    const { language, toggleLanguage } = useLanguage();
+
     return (
         <div className="bg-black text-white py-2 sticky top-0 z-60">
             <div className="container mx-auto px-4">
@@ -16,11 +19,17 @@ const TopBanner = () => {
 
                     {/* Language Selector */}
                     <div className="flex items-center gap-3">
-                        <button className="font-medium hover:text-orange transition-colors text-white">
+                        <button
+                            onClick={() => toggleLanguage('EN')}
+                            className={`font-medium hover:text-orange transition-colors ${language === 'EN' ? 'text-white' : 'text-white/60'}`}
+                        >
                             EN
                         </button>
                         <span className="text-white/30">|</span>
-                        <button className="font-medium hover:text-orange transition-colors text-white/60">
+                        <button
+                            onClick={() => toggleLanguage('PT')}
+                            className={`font-medium hover:text-orange transition-colors ${language === 'PT' ? 'text-white' : 'text-white/60'}`}
+                        >
                             PT
                         </button>
                     </div>

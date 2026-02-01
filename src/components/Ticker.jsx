@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { PiStarFourFill } from "react-icons/pi";
+import { useLanguage } from '../context/LanguageContext';
 
 // Animation config defined outside
 const tickerAnimation = {
@@ -13,17 +14,10 @@ const tickerAnimation = {
     }
 };
 
-// Static data
-const DEFAULT_ITEMS = [
-    "AUTHENTIC SMASH BURGERS",
-    "100% HALAL",
-    "SMASH IT",
-    "BURGERS DONE RIGHT",
-    "OPEN DAILY 12PM - 11PM",
-    "ORDER ON UBER EATS"
-];
-
-const Ticker = ({ items = DEFAULT_ITEMS }) => {
+const Ticker = ({ items }) => {
+    const { t } = useLanguage();
+    // specific items prop overrides default translated items
+    const displayItems = items || t.ticker.items;
 
     return (
         <div className="bg-orange py-4 overflow-hidden border-y border-black/10">
@@ -37,7 +31,7 @@ const Ticker = ({ items = DEFAULT_ITEMS }) => {
                         transition={tickerAnimation.transition}
                         className="flex items-center"
                     >
-                        {items.map((item, index) => (
+                        {displayItems.map((item, index) => (
                             <div key={index} className="flex items-center">
                                 <span className="ticker-text text-white">
                                     {item}

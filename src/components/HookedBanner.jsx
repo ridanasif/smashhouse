@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import { useLanguage } from '../context/LanguageContext';
 
 // Animation config defined outside
 const textAnimation = {
@@ -9,6 +10,8 @@ const textAnimation = {
 };
 
 const HookedBanner = () => {
+    const { t } = useLanguage();
+
     return (
         <section className="relative w-full h-[60vh] md:h-[85vh] overflow-hidden">
             {/* Background Image */}
@@ -28,7 +31,7 @@ const HookedBanner = () => {
                     {...textAnimation}
                     className="text-[12vw] md:text-[10vw] font-black text-white leading-none text-center uppercase drop-shadow-lg"
                 >
-                    One Bite. You're Hooked.
+                    {t.hookedBanner.text}
                 </motion.h2>
             </div>
         </section>

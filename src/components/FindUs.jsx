@@ -1,9 +1,9 @@
 import Ticker from './Ticker';
-
-// Static data
-const VISIT_US_ITEMS = Array(10).fill("VISIT US");
+import { useLanguage } from '../context/LanguageContext';
 
 const FindUs = () => {
+    const { t } = useLanguage();
+    const visitUsItems = Array(10).fill(t.findUs.tickerText);
 
     return (
         <section id="find-us" className="relative w-full h-[60vh] md:h-screen bg-gray-100">
@@ -24,7 +24,7 @@ const FindUs = () => {
 
             {/* Overlay Ticker - Positioned at Top */}
             <div className="absolute top-0 left-0 right-0 z-10">
-                <Ticker items={VISIT_US_ITEMS} />
+                <Ticker items={visitUsItems} />
             </div>
         </section>
     );

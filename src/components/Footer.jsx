@@ -1,12 +1,5 @@
 import { FaInstagram, FaFacebookF, FaTiktok } from "react-icons/fa";
-
-// Static data
-const LINKS = [
-    { name: "Home", href: "#" },
-    { name: "About", href: "#about" },
-    { name: "Menu", href: "#menu" },
-    { name: "Find Us", href: "#find-us" },
-];
+import { useLanguage } from '../context/LanguageContext';
 
 const SOCIALS = [
     { icon: FaInstagram, href: "#" },
@@ -15,7 +8,9 @@ const SOCIALS = [
 ];
 
 const Footer = () => {
+    const { t } = useLanguage();
     const currentYear = new Date().getFullYear();
+    const { links, description, quickLinks, findUs, location, country, rights } = t.footer;
 
     return (
         <footer className="bg-black text-white pt-16 pb-8 border-t border-white/10">
@@ -29,8 +24,7 @@ const Footer = () => {
                             className="w-24 mb-6 rounded-full mx-auto md:mx-0"
                         />
                         <p className="text-gray-400 leading-relaxed mb-6 max-w-sm mx-auto md:mx-0">
-                            Bringing the authentic smash burger experience to Portugal.
-                            Crispy edges, juicy patties, and unforgettable flavor in every bite.
+                            {description}
                         </p>
                         <div className="flex gap-4 justify-center md:justify-start">
                             {SOCIALS.map((social, index) => (
@@ -49,9 +43,9 @@ const Footer = () => {
                     <div className="w-full md:w-2/3 grid grid-cols-2 gap-8">
                         {/* Quick Links */}
                         <div className="text-center md:text-left">
-                            <h3 className="footer-heading mb-6">Quick Links</h3>
+                            <h3 className="footer-heading mb-6">{quickLinks}</h3>
                             <ul className="space-y-4">
-                                {LINKS.map((link) => (
+                                {links.map((link) => (
                                     <li key={link.name}>
                                         <a
                                             href={link.href}
@@ -66,10 +60,10 @@ const Footer = () => {
 
                         {/* Contact/Location */}
                         <div className="text-center md:text-left">
-                            <h3 className="footer-heading mb-6">Find Us</h3>
+                            <h3 className="footer-heading mb-6">{findUs}</h3>
                             <p className="text-gray-400 mb-4 hover:text-white transition-colors">
-                                Odivelas, Lisbon<br />
-                                Portugal
+                                {location}<br />
+                                {country}
                             </p>
                             <div className="flex flex-col gap-2 text-gray-400">
                                 <a href="tel:+351935555765" className="hover:text-orange transition-colors">+351 935 555 765</a>
@@ -80,7 +74,7 @@ const Footer = () => {
 
                 {/* Bottom Bar */}
                 <div className="pt-8 border-t border-white/10 flex justify-center items-center text-sm text-gray-500">
-                    <p>&copy; {currentYear} Smash House. All rights reserved.</p>
+                    <p>&copy; {currentYear} Smash House. {rights}</p>
                 </div>
             </div>
         </footer>

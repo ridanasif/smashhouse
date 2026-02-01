@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import { useLanguage } from '../context/LanguageContext';
 
 // Animation variants defined outside
 const textAnimation = {
@@ -23,6 +24,9 @@ const frontImageAnimation = {
 };
 
 const About = () => {
+    const { t } = useLanguage();
+    const { about } = t;
+
     return (
         <section id="about" className="py-20 md:py-32 bg-[#fffbf2] overflow-hidden">
             <div className="container mx-auto px-4">
@@ -31,17 +35,18 @@ const About = () => {
                     <div className="w-full md:w-1/2">
                         <motion.div {...textAnimation}>
                             <span className="section-label block">
-                                About Us
+                                {about.label}
                             </span>
                             <h2 className="heading-section mb-8 text-black">
-                                BIG BURGERS. <br />
-                                <span className="text-orange">FULL SATISFACTION.</span>
+                                {about.headingPart1} <br />
+                                <span className="text-orange">{about.headingPart2}</span>
                             </h2>
-                            <p className="text-body mb-6">
-                                Born in the vibrant streets of <span className="font-bold text-black">Lisbon, Portugal</span>, smash house started with a simple obsession: perfecting the crust.
-                            </p>
+                            <p
+                                className="text-body mb-6"
+                                dangerouslySetInnerHTML={{ __html: about.paragraph1 }}
+                            />
                             <p className="text-body">
-                                We believe a burger isn't just food; it's an experience. Our journey began in a small kitchen in Odivelas, where we smashed our first patty, locking in that irresistible flavor. Today, we bring that authentic, juicy, crispy-edged goodness to every plate, serving not just a meal, but a piece of our passion.
+                                {about.paragraph2}
                             </p>
                         </motion.div>
                     </div>

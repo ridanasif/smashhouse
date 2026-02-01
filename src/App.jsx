@@ -9,21 +9,25 @@ import Menu from "./components/Menu"
 import TopBanner from "./components/TopBanner"
 import ImageTicker from "./components/ImageTicker"
 
+import { LanguageProvider } from "./context/LanguageContext"
+
 function App() {
 
   return (
-    <div className="flex flex-col min-h-screen">
-      <TopBanner />
-      <Navbar />
-      <Carousel />
-      <Ticker />
-      <About />
-      <HookedBanner />
-      <Menu />
-      <FindUs />
-      <ImageTicker />
-      <Footer />
-    </div>
+    <LanguageProvider>
+      <div className="flex flex-col min-h-screen">
+        <TopBanner />
+        <Navbar />
+        <Carousel />
+        <Ticker />
+        <About />
+        <HookedBanner />
+        <Menu />
+        <FindUs />
+        <ImageTicker />
+        <Footer />
+      </div>
+    </LanguageProvider>
   )
 }
 

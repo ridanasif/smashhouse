@@ -1,5 +1,6 @@
 import { useState, useRef, useEffect } from 'react';
 import { LuChevronLeft, LuChevronRight } from 'react-icons/lu';
+import { useLanguage } from '../context/LanguageContext';
 
 // Static data
 const MENU_ITEMS = [
@@ -11,6 +12,7 @@ const MENU_ITEMS = [
 ];
 
 const Menu = () => {
+    const { t } = useLanguage();
     const carouselRef = useRef(null);
     const [canScrollLeft, setCanScrollLeft] = useState(false);
     const [canScrollRight, setCanScrollRight] = useState(true);
@@ -50,10 +52,10 @@ const Menu = () => {
                     {/* Left - Title */}
                     <div>
                         <h2 className="heading-section text-black">
-                            Our Burgers
+                            {t.menu.heading}
                         </h2>
                         <p className="text-subtitle mt-2">
-                            Freshly Made. Fully Loaded.
+                            {t.menu.subtitle}
                         </p>
                     </div>
 

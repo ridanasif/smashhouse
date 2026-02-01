@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { LuShoppingBag, LuMenu, LuX } from "react-icons/lu";
 import Button from "./Button";
+import { useLanguage } from '../context/LanguageContext';
 
 // Animation variants defined outside
 const logoAnimation = {
@@ -9,19 +10,13 @@ const logoAnimation = {
     animate: { opacity: 1, x: 0 }
 };
 
-// Static data
-const NAV_LINKS = [
-    { name: "Home", href: "#" },
-    { name: "About", href: "#about" },
-    { name: "Menu", href: "#menu" },
-    { name: "Find Us", href: "#find-us" },
-];
-
 const ORDER_URL = "https://www.ubereats.com/store/smash-house-odivelas/KC9OWAyVUySObwDbwi-11A?diningMode=DELIVERY&utm_source=ig&utm_medium=social&utm_content=link_in_bio";
 
 const Navbar = () => {
+    const { t } = useLanguage();
     const [isOpen, setIsOpen] = useState(false);
     const [scrolled, setScrolled] = useState(false);
+    const { links, orderNow } = t.navbar;
 
     useEffect(() => {
         const handleScroll = () => {
@@ -67,7 +62,7 @@ const Navbar = () => {
                     {/* Desktop Nav */}
                     <nav className="hidden md:flex items-center space-x-8">
                         <ul className="flex space-x-8 items-center">
-                            {NAV_LINKS.map((link) => (
+                            {links.map((link) => (
                                 <li key={link.name}>
                                     <a
                                         href={link.href}
@@ -81,7 +76,7 @@ const Navbar = () => {
                             ))}
                         </ul>
                         <Button
-                            text="Order Now"
+                            text={orderNow}
                             icon={LuShoppingBag}
                             href={ORDER_URL}
                             target="_blank"
@@ -106,7 +101,7 @@ const Navbar = () => {
                     }`}
             >
                 <div className="container mx-auto px-4 flex flex-col space-y-4 w-full">
-                    {NAV_LINKS.map((link) => (
+                    {links.map((link) => (
                         <a
                             key={link.name}
                             href={link.href}
@@ -118,7 +113,7 @@ const Navbar = () => {
                     ))}
                     <div className="pt-2">
                         <Button
-                            text="Order Now"
+                            text={orderNow}
                             icon={LuShoppingBag}
                             href={ORDER_URL}
                             target="_blank"

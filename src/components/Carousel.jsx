@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { useLanguage } from '../context/LanguageContext';
 
 // Animation variants defined outside
 const fadeVariants = {
@@ -13,40 +14,21 @@ const contentVariants = {
     animate: { y: 0, opacity: 1 }
 };
 
-// Static data
-const SLIDES = [
-    {
-        id: 1,
-        image: "https://images.unsplash.com/photo-1513104890138-7c749659a591?q=80&w=2070&auto=format&fit=crop",
-        title: "Authentic Smash Burgers",
-        subtitle: "Taste the difference in every bite"
-    },
-    {
-        id: 2,
-        image: "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?q=80&w=2070&auto=format&fit=crop",
-        title: "Fresh Ingredients",
-        subtitle: "Locally sourced, premium quality"
-    },
-    {
-        id: 3,
-        image: "https://images.unsplash.com/photo-1594212699903-ec8a3eca50f5?q=80&w=2071&auto=format&fit=crop",
-        title: "Irresistible Fries",
-        subtitle: "Perfectly crispy and seasoned"
-    },
-    {
-        id: 4,
-        image: "https://images.unsplash.com/photo-1550547660-d9450f859349?q=80&w=1965&auto=format&fit=crop",
-        title: "Signature Sauces",
-        subtitle: "The secret touch you'll love"
-    }
+const IMAGES = [
+    "https://images.unsplash.com/photo-1513104890138-7c749659a591?q=80&w=2070&auto=format&fit=crop",
+    "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?q=80&w=2070&auto=format&fit=crop",
+    "https://images.unsplash.com/photo-1594212699903-ec8a3eca50f5?q=80&w=2071&auto=format&fit=crop",
+    "https://images.unsplash.com/photo-1550547660-d9450f859349?q=80&w=1965&auto=format&fit=crop"
 ];
 
 const Carousel = () => {
+    const { t } = useLanguage();
     const [currentSlide, setCurrentSlide] = useState(0);
+    const heroText = t.carousel.hero;
 
     useEffect(() => {
         const timer = setInterval(() => {
-            setCurrentSlide((prev) => (prev + 1) % SLIDES.length);
+            setCurrentSlide((prev) => (prev + 1) % IMAGES.length);
         }, 5000);
         return () => clearInterval(timer);
     }, []);
@@ -64,8 +46,8 @@ const Carousel = () => {
                     className="absolute inset-0 w-full h-full"
                 >
                     <img
-                        src={SLIDES[currentSlide].image}
-                        alt={SLIDES[currentSlide].title}
+                        src={IMAGES[currentSlide]}
+                        alt="Smash House Burger"
                         className="w-full h-full object-cover"
                     />
                     {/* Overlay */}
@@ -84,9 +66,9 @@ const Carousel = () => {
                             transition={{ delay: 0.2, duration: 0.8 }}
                         >
                             <h1 className="heading-hero text-white">
-                                <div className="block">Smash.</div>
-                                <div className="block">Sear.</div>
-                                <div className="block">Repeat.</div>
+                                <div className="block">{heroText.line1}</div>
+                                <div className="block">{heroText.line2}</div>
+                                <div className="block">{heroText.line3}</div>
                             </h1>
                         </motion.div>
                     </div>
@@ -96,7 +78,7 @@ const Carousel = () => {
             {/* Dots */}
             <div className="absolute bottom-8 left-0 right-0 z-10">
                 <div className="flex justify-center gap-3">
-                    {SLIDES.map((_, index) => (
+                    {IMAGES.map((_, index) => (
                         <button
                             key={index}
                             onClick={() => setCurrentSlide(index)}
