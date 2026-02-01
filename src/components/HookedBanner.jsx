@@ -23,10 +23,10 @@ const HookedBanner = () => {
             </div>
 
             {/* Content */}
-            <div className="absolute bottom-0 left-0 right-0 w-full pb-6 md:pb-10 z-10 flex items-end justify-center overflow-hidden">
+            <div className="absolute bottom-0 left-0 right-0 w-full z-10 flex items-end justify-center">
                 <motion.h2
                     {...textAnimation}
-                    className="text-[6.2vw] font-black text-white leading-none tracking-normal w-full text-center uppercase drop-shadow-lg whitespace-nowrap px-4"
+                    className="text-[12vw] md:text-[10vw] font-black text-white leading-none text-center uppercase drop-shadow-lg"
                 >
                     One Bite. You're Hooked.
                 </motion.h2>

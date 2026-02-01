@@ -7,6 +7,7 @@ import Footer from "./components/Footer"
 import FindUs from "./components/FindUs"
 import Menu from "./components/Menu"
 import TopBanner from "./components/TopBanner"
+import ImageTicker from "./components/ImageTicker"
 
 function App() {
 
@@ -20,6 +21,7 @@ function App() {
       <HookedBanner />
       <Menu />
       <FindUs />
+      <ImageTicker />
       <Footer />
     </div>
   )

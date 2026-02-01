@@ -72,7 +72,7 @@ const Footer = () => {
                                 Portugal
                             </p>
                             <div className="flex flex-col gap-2 text-gray-400">
-                                <a href="mailto:info@smashhouse.pt" className="hover:text-orange transition-colors">info@smashhouse.pt</a>
+                                <a href="tel:+351935555765" className="hover:text-orange transition-colors">+351 935 555 765</a>
                             </div>
                         </div>
                     </div>

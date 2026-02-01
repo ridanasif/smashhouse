@@ -7,11 +7,11 @@ const TopBanner = () => {
                 <div className="flex justify-between items-center text-sm">
                     {/* Contact Number */}
                     <a
-                        href="tel:+351123456789"
+                        href="tel:+351935555765"
                         className="flex items-center gap-2 hover:text-orange transition-colors"
                     >
                         <LuPhone size={14} />
-                        <span>+351 123 456 789</span>
+                        <span>+351 935 555 765</span>
                     </a>
 
                     {/* Language Selector */}
