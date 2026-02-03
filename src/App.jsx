@@ -9,6 +9,8 @@ import Menu from "./components/Menu"
 import TopBanner from "./components/TopBanner"
 import ImageTicker from "./components/ImageTicker"
 
+import { Analytics } from "@vercel/analytics/react"
+
 import { LanguageProvider } from "./context/LanguageContext"
 
 function App() {
@@ -26,6 +28,7 @@ function App() {
         <FindUs />
         <ImageTicker />
         <Footer />
+        <Analytics />
       </div>
     </LanguageProvider>
   )
