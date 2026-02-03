@@ -2,9 +2,9 @@ import { FaInstagram, FaFacebookF, FaTiktok } from "react-icons/fa";
 import { useLanguage } from '../context/LanguageContext';
 
 const SOCIALS = [
-    { icon: FaInstagram, href: "#" },
-    { icon: FaFacebookF, href: "#" },
-    { icon: FaTiktok, href: "#" },
+    { icon: FaInstagram, href: "https://www.instagram.com/smashhouse.pt/" },
+    { icon: FaFacebookF, href: "https://www.facebook.com/smashhouse.pt/" },
+    { icon: FaTiktok, href: "https://www.tiktok.com/@smashhouse.pt" },
 ];
 
 const Footer = () => {
