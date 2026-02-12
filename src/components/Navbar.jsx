@@ -98,7 +98,7 @@ const Navbar = () => {
 
             {/* Mobile Nav - Absolute position so it overlays content */}
             <div
-                className={`absolute top-full left-0 w-full bg-white shadow-lg flex flex-col items-center gap-6 py-8 transition-all duration-300 ease-in-out md:hidden ${isOpen ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-5 pointer-events-none'
+                className={`absolute top-full left-0 w-full bg-white shadow-lg flex flex-col items-center gap-6 py-8 transition-[opacity,transform] duration-300 ease-in-out md:hidden ${isOpen ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-5 pointer-events-none'
                     }`}
             >
                 <div className="container mx-auto px-4 flex flex-col space-y-4 w-full">

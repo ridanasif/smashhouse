@@ -29,7 +29,7 @@ const Ticker = ({ items }) => {
                         initial={tickerAnimation.initial}
                         animate={tickerAnimation.animate}
                         transition={tickerAnimation.transition}
-                        className="flex items-center"
+                        className="flex items-center transform-gpu"
                     >
                         {displayItems.map((item, index) => (
                             <div key={index} className="flex items-center">

@@ -26,10 +26,10 @@ const HookedBanner = () => {
             </div>
 
             {/* Content */}
-            <div className="absolute bottom-0 left-0 right-0 w-full z-10 flex items-end justify-center">
+            <div className="absolute inset-0 z-10 flex items-center justify-center p-4">
                 <motion.h2
                     {...textAnimation}
-                    className="text-[12vw] md:text-[10vw] font-black text-white leading-none text-center uppercase drop-shadow-lg"
+                    className="text-[15vw] md:text-[10vw] font-black text-white leading-none text-center uppercase drop-shadow-2xl"
                 >
                     {t.hookedBanner.text}
                 </motion.h2>

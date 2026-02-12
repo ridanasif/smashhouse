@@ -36,7 +36,7 @@ body {
 
 /* Hero Heading - Largest, for hero/banner sections */
 .heading-hero {
-    font-size: clamp(3rem, 10vw, 9rem);
+    font-size: clamp(4.5rem, 15vw, 9rem);
     font-weight: 900;
     line-height: 0.85;
     letter-spacing: -0.02em;

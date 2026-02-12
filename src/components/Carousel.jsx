@@ -44,7 +44,7 @@ const Carousel = () => {
                     animate="animate"
                     exit="exit"
                     transition={{ duration: 0.7 }}
-                    className="absolute inset-0 w-full h-full"
+                    className="absolute inset-0 w-full h-full transform-gpu"
                 >
                     <img
                         src={IMAGES[currentSlide]}
@@ -57,9 +57,9 @@ const Carousel = () => {
             </AnimatePresence>
 
             {/* Content */}
-            <div className="absolute inset-0 flex items-center pt-[100px]">
+            <div className="absolute inset-0 flex items-center justify-center md:justify-start pt-[100px]">
                 <div className="container mx-auto px-4">
-                    <div className="max-w-4xl text-white">
+                    <div className="max-w-4xl text-white text-center md:text-left">
                         <motion.div
                             variants={contentVariants}
                             initial="initial"

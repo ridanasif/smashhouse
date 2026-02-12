@@ -35,7 +35,7 @@ const ImageTicker = () => {
                         initial={tickerAnimation.initial}
                         animate={tickerAnimation.animate}
                         transition={tickerAnimation.transition}
-                        className="flex shrink-0"
+                        className="flex shrink-0 transform-gpu"
                     >
                         {IMAGES.map((src, index) => (
                             <div

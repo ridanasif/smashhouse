@@ -46,11 +46,11 @@ const Footer = () => {
                     </div>
 
                     {/* Links & Contact Group */}
-                    <div className="w-full md:w-2/3 grid grid-cols-2 gap-8">
+                    <div className="w-full md:w-2/3 grid grid-cols-1 sm:grid-cols-2 gap-12 md:gap-8">
                         {/* Quick Links */}
-                        <div className="text-center md:text-left">
+                        <div className="flex flex-col items-center md:items-start">
                             <h3 className="footer-heading mb-6">{quickLinks}</h3>
-                            <ul className="space-y-4">
+                            <ul className="space-y-4 text-center md:text-left">
                                 {links.map((link) => (
                                     <li key={link.name}>
                                         <a
@@ -65,13 +65,13 @@ const Footer = () => {
                         </div>
 
                         {/* Contact/Location */}
-                        <div className="text-center md:text-left">
+                        <div className="flex flex-col items-center md:items-start">
                             <h3 className="footer-heading mb-6">{findUs}</h3>
-                            <p className="text-gray-400 mb-4 hover:text-white transition-colors">
+                            <p className="text-gray-400 mb-4 hover:text-white transition-colors text-center md:text-left">
                                 {location}<br />
                                 {country}
                             </p>
-                            <div className="flex flex-col gap-2 text-gray-400">
+                            <div className="flex flex-col gap-2 text-gray-400 items-center md:items-start">
                                 <a href={SITE_CONFIG.contact.phoneHref} className="hover:text-white transition-colors">{SITE_CONFIG.contact.phone}</a>
                             </div>
                         </div>
