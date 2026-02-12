@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { motion } from "framer-motion";
+import { motion, useScroll, useMotionValueEvent } from "framer-motion";
 import { LuShoppingBag, LuMenu, LuX } from "react-icons/lu";
 import Button from "./Button";
 import { useLanguage } from '../context/LanguageContext';
@@ -19,13 +19,15 @@ const Navbar = () => {
     const [scrolled, setScrolled] = useState(false);
     const { links, orderNow } = t.navbar;
 
-    useEffect(() => {
-        const handleScroll = () => {
-            setScrolled(window.scrollY > 50);
-        };
-        window.addEventListener("scroll", handleScroll);
-        return () => window.removeEventListener("scroll", handleScroll);
-    }, []);
+    const { scrollY } = useScroll();
+
+    useMotionValueEvent(scrollY, "change", (latest) => {
+        if (latest > 50) {
+            setScrolled(true);
+        } else {
+            setScrolled(false);
+        }
+    });
 
     const scrollToSection = (e, href) => {
         e.preventDefault();
@@ -44,7 +46,7 @@ const Navbar = () => {
 
     return (
         <div
-            className={`transition-all duration-300 shadow-sm py-1 ${scrolled ? "bg-white/80 backdrop-blur-md" : "bg-white"
+            className={`transition-colors duration-300 shadow-sm py-1 ${scrolled ? "bg-white/80 backdrop-blur-md" : "bg-white"
                 }`}
         >
             <div className="container mx-auto px-4">

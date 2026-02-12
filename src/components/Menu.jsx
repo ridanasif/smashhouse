@@ -102,6 +102,8 @@ const Menu = () => {
                                     src={item.image}
                                     alt={`Menu item ${item.id}`}
                                     className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                                    loading="lazy"
+                                    decoding="async"
                                 />
                             </div>
                         </div>

@@ -36,7 +36,7 @@ const Carousel = () => {
 
     return (
         <div className="relative h-[90vh] w-full overflow-hidden bg-black">
-            <AnimatePresence mode='wait'>
+            <AnimatePresence>
                 <motion.div
                     key={currentSlide}
                     variants={fadeVariants}
@@ -50,6 +50,8 @@ const Carousel = () => {
                         src={IMAGES[currentSlide]}
                         alt="Smash Craft Burger"
                         className="w-full h-full object-cover"
+                        decoding="async"
+                        fetchpriority="high"
                     />
                     {/* Overlay */}
                     <div className="absolute inset-0 bg-black/20" />
