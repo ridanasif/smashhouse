@@ -13,7 +13,7 @@ const HookedBanner = () => {
     const { t } = useLanguage();
 
     return (
-        <section className="relative w-full h-[60vh] md:h-[85vh] overflow-hidden">
+        <section className="relative w-full min-h-screen overflow-hidden">
             {/* Background Image */}
             <div className="absolute inset-0">
                 <img

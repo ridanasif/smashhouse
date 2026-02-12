@@ -15,10 +15,11 @@ const contentVariants = {
 };
 
 const IMAGES = [
-    "https://images.unsplash.com/photo-1513104890138-7c749659a591?q=80&w=2070&auto=format&fit=crop",
     "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?q=80&w=2070&auto=format&fit=crop",
     "https://images.unsplash.com/photo-1594212699903-ec8a3eca50f5?q=80&w=2071&auto=format&fit=crop",
-    "https://images.unsplash.com/photo-1550547660-d9450f859349?q=80&w=1965&auto=format&fit=crop"
+    "https://images.unsplash.com/photo-1550547660-d9450f859349?q=80&w=1965&auto=format&fit=crop",
+    "https://images.unsplash.com/photo-1513104890138-7c749659a591?q=80&w=2070&auto=format&fit=crop",
+
 ];
 
 const Carousel = () => {
@@ -34,7 +35,7 @@ const Carousel = () => {
     }, []);
 
     return (
-        <div className="relative h-[500px] md:h-[600px] w-full overflow-hidden bg-gray-900">
+        <div className="relative h-[90vh] w-full overflow-hidden bg-black">
             <AnimatePresence mode='wait'>
                 <motion.div
                     key={currentSlide}
@@ -47,7 +48,7 @@ const Carousel = () => {
                 >
                     <img
                         src={IMAGES[currentSlide]}
-                        alt="Smash House Burger"
+                        alt="Smash Craft Burger"
                         className="w-full h-full object-cover"
                     />
                     {/* Overlay */}
@@ -56,7 +57,7 @@ const Carousel = () => {
             </AnimatePresence>
 
             {/* Content */}
-            <div className="absolute inset-0 flex items-center">
+            <div className="absolute inset-0 flex items-center pt-[100px]">
                 <div className="container mx-auto px-4">
                     <div className="max-w-4xl text-white">
                         <motion.div

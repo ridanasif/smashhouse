@@ -1,11 +1,17 @@
 import { FaInstagram, FaFacebookF, FaTiktok } from "react-icons/fa";
 import { useLanguage } from '../context/LanguageContext';
+import { SITE_CONFIG } from '../data/config';
 
-const SOCIALS = [
-    { icon: FaInstagram, href: "https://www.instagram.com/smashhouse.pt/" },
-    { icon: FaFacebookF, href: "https://www.facebook.com/smashhouse.pt/" },
-    { icon: FaTiktok, href: "https://www.tiktok.com/@smashhouse.pt" },
-];
+const SOCIAL_ICONS = {
+    Instagram: FaInstagram,
+    Facebook: FaFacebookF,
+    TikTok: FaTiktok,
+};
+
+const SOCIALS = SITE_CONFIG.socials.map(social => ({
+    icon: SOCIAL_ICONS[social.name],
+    href: social.url
+}));
 
 const Footer = () => {
     const { t } = useLanguage();
@@ -19,8 +25,8 @@ const Footer = () => {
                     {/* Brand Section */}
                     <div className="w-full md:w-1/3">
                         <img
-                            src="/images/logo.webp"
-                            alt="smash house logo"
+                            src={SITE_CONFIG.brand.logo}
+                            alt={SITE_CONFIG.brand.logoAlt}
                             className="w-24 mb-6 rounded-full mx-auto md:mx-0"
                         />
                         <p className="text-gray-400 leading-relaxed mb-6 max-w-sm mx-auto md:mx-0">
@@ -31,7 +37,7 @@ const Footer = () => {
                                 <a
                                     key={index}
                                     href={social.href}
-                                    className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-orange transition-colors duration-300"
+                                    className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-white hover:text-black transition-colors duration-300"
                                 >
                                     <social.icon size={18} />
                                 </a>
@@ -66,7 +72,7 @@ const Footer = () => {
                                 {country}
                             </p>
                             <div className="flex flex-col gap-2 text-gray-400">
-                                <a href="tel:+351935555765" className="hover:text-orange transition-colors">+351 935 555 765</a>
+                                <a href={SITE_CONFIG.contact.phoneHref} className="hover:text-white transition-colors">{SITE_CONFIG.contact.phone}</a>
                             </div>
                         </div>
                     </div>
@@ -74,7 +80,7 @@ const Footer = () => {
 
                 {/* Bottom Bar */}
                 <div className="pt-8 border-t border-white/10 flex justify-center items-center text-sm text-gray-500">
-                    <p>&copy; {currentYear} Smash House. {rights}</p>
+                    <p>&copy; {currentYear} {SITE_CONFIG.brand.name}. {rights}</p>
                 </div>
             </div>
         </footer>

@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { LuShoppingBag, LuMenu, LuX } from "react-icons/lu";
 import Button from "./Button";
 import { useLanguage } from '../context/LanguageContext';
+import { SITE_CONFIG } from '../data/config';
 
 // Animation variants defined outside
 const logoAnimation = {
@@ -10,7 +11,7 @@ const logoAnimation = {
     animate: { opacity: 1, x: 0 }
 };
 
-const ORDER_URL = "https://www.ubereats.com/store/smash-house-odivelas/KC9OWAyVUySObwDbwi-11A?diningMode=DELIVERY&utm_source=ig&utm_medium=social&utm_content=link_in_bio";
+const ORDER_URL = SITE_CONFIG.links.orderNow;
 
 const Navbar = () => {
     const { t } = useLanguage();
@@ -42,8 +43,8 @@ const Navbar = () => {
     };
 
     return (
-        <header
-            className={`sticky top-8 left-0 right-0 z-50 transition-all duration-300 shadow-sm py-2 ${scrolled ? "bg-white/80 backdrop-blur-md" : "bg-white"
+        <div
+            className={`transition-all duration-300 shadow-sm py-1 ${scrolled ? "bg-white/80 backdrop-blur-md" : "bg-white"
                 }`}
         >
             <div className="container mx-auto px-4">
@@ -55,7 +56,7 @@ const Navbar = () => {
                         className="shrink-0"
                     >
                         <a href="#" onClick={(e) => scrollToSection(e, "#")} className="block">
-                            <img src="/images/logo.webp" alt="smash house logo" className="w-16 md:w-20 rounded-full transition-all duration-300" />
+                            <img src={SITE_CONFIG.brand.logo} alt={SITE_CONFIG.brand.logoAlt} className="w-14 md:w-16 rounded-full transition-all duration-300" />
                         </a>
                     </motion.div>
 
@@ -122,7 +123,7 @@ const Navbar = () => {
                     </div>
                 </div>
             </div>
-        </header>
+        </div>
     );
 };
 

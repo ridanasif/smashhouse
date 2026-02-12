@@ -20,7 +20,7 @@ const Ticker = ({ items }) => {
     const displayItems = items || t.ticker.items;
 
     return (
-        <div className="bg-orange py-4 overflow-hidden border-y border-black/10">
+        <div className="bg-orange h-[10vh] flex items-center overflow-hidden border-y border-black/10">
             <div className="flex whitespace-nowrap">
                 {/* We double the content to create a seamless loop */}
                 {[...Array(2)].map((_, i) => (

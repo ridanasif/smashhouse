@@ -18,20 +18,19 @@ export const TRANSLATIONS = {
         },
         ticker: {
             items: [
-                "AUTHENTIC SMASH BURGERS",
-                "100% HALAL",
-                "SMASH IT",
-                "BURGERS DONE RIGHT",
-                "OPEN DAILY 12PM - 11PM",
-                "ORDER ON UBER EATS"
+                "REAL SMASH BURGERS",
+                "100% HOMEMADE",
+                "MARRAKECH | GUELIZ",
+                "OPEN DAILY 12PM - 2AM",
+                "THE SPOT FOR SMASH BURGERS"
             ]
         },
         about: {
             label: "About Us",
-            headingPart1: "BIG BURGERS.",
-            headingPart2: "FULL SATISFACTION.",
-            paragraph1: "Born in the vibrant streets of <span class='font-bold text-black'>Lisbon, Portugal</span>, smash house started with a simple obsession: perfecting the crust.",
-            paragraph2: "We believe a burger isn't just food; it's an experience. Our journey began in a small kitchen in Odivelas, where we smashed our first patty, locking in that irresistible flavor. Today, we bring that authentic, juicy, crispy-edged goodness to every plate, serving not just a meal, but a piece of our passion."
+            headingPart1: "REAL SMASH.",
+            headingPart2: "100% HOMEMADE.",
+            paragraph1: "Located in the heart of <span class='font-bold text-black'>Marrakech, Morocco</span>, Smash Craft is the ultimate spot for authentic smash burgers.",
+            paragraph2: "In the vibrant district of Gueliz, we obsess over every detail. From our 100% homemade ingredients to the perfect sear on every patty, we bring a true smash burger experience that's all about flavor, quality, and that signature crispy edge."
         },
         hookedBanner: {
             text: "One Bite. You're Hooked."
@@ -44,11 +43,11 @@ export const TRANSLATIONS = {
             tickerText: "VISIT US"
         },
         footer: {
-            description: "Bringing the authentic smash burger experience to Portugal. Crispy edges, juicy patties, and unforgettable flavor in every bite.",
+            description: "Bringing the real smash burger experience to Marrakech. 100% homemade, crispy edges, and juicy patties in every bite.",
             quickLinks: "Quick Links",
             findUs: "Find Us",
-            location: "Odivelas, Lisbon",
-            country: "Portugal",
+            location: "Gueliz, Marrakech",
+            country: "Morocco",
             rights: "All rights reserved.",
             links: [
                 { name: "Home", href: "#" },
@@ -58,62 +57,61 @@ export const TRANSLATIONS = {
             ]
         }
     },
-    PT: {
+    FR: {
         navbar: {
             links: [
-                { name: "Início", href: "#" },
-                { name: "Sobre", href: "#about" },
-                { name: "Menu", href: "#menu" },
-                { name: "Encontre-nos", href: "#find-us" },
+                { name: "Accueil", href: "#" },
+                { name: "À Propos", href: "#about" },
+                { name: "Carte", href: "#menu" },
+                { name: "Nous Trouver", href: "#find-us" },
             ],
-            orderNow: "Pedir Agora"
+            orderNow: "Commander"
         },
         carousel: {
             hero: {
-                line1: "Esmagar.",
-                line2: "Selar.",
-                line3: "Repetir."
+                line1: "Smash.",
+                line2: "Saisir.",
+                line3: "Répéter."
             }
         },
         ticker: {
             items: [
-                "SMASH BURGERS AUTÊNTICOS",
-                "100% HALAL",
-                "SMASH IT",
-                "HAMBÚRGUERES FEITOS COMO DEVE SER",
-                "ABERTO TODOS OS DIAS 12H - 23H",
-                "ENCOMENDE NO UBER EATS"
+                "DES VRAIS SMASH BURGERS",
+                "100% FAIT MAISON",
+                "MARRAKECH | GUÉLIZ",
+                "OUVERT TOUS LES JOURS 12H - 02H",
+                "LE SPOT DU SMASH BURGER"
             ]
         },
         about: {
-            label: "Sobre Nós",
-            headingPart1: "GRANDES HAMBÚRGUERES.",
-            headingPart2: "SATISFAÇÃO TOTAL.",
-            paragraph1: "Nascido nas ruas vibrantes de <span class='font-bold text-black'>Lisboa, Portugal</span>, a Smash House começou com uma simples obsessão: aperfeiçoar a crosta.",
-            paragraph2: "Acreditamos que um hambúrguer não é apenas comida; é uma experiência. A nossa jornada começou numa pequena cozinha em Odivelas, onde esmagámos o nosso primeiro hambúrguer, selando aquele sabor irresistível. Hoje, trazemos essa delícia autêntica, suculenta e de bordas crocantes para cada prato, servindo não apenas uma refeição, mas um pedaço da nossa paixão."
+            label: "À Propos",
+            headingPart1: "LE VRAI SMASH.",
+            headingPart2: "100% FAIT MAISON.",
+            paragraph1: "Situé au cœur de <span class='font-bold text-black'>Marrakech, Maroc</span>, Smash Craft est l'adresse incontournable pour les amateurs de vrais smash burgers.",
+            paragraph2: "Dans le quartier animé de Guéliz, nous apportons une attention particulière à chaque détail. De nos ingrédients 100% faits maison au marquage parfait de chaque viande, nous offrons une expérience authentique centrée sur le goût, la qualité et ce croustillant unique qui nous définit."
         },
         hookedBanner: {
-            text: "Uma Dentada. Fica Viciado."
+            text: "Une Bouchée. Vous Êtes Accro."
         },
         menu: {
-            heading: "Os Nossos Hambúrgueres",
-            subtitle: "Feitos na Hora. Totalmente Recheados."
+            heading: "Nos Burgers",
+            subtitle: "Frais. Généreux."
         },
         findUs: {
-            tickerText: "VISITE-NOS"
+            tickerText: "NOUS VISITER"
         },
         footer: {
-            description: "Trazendo a autêntica experiência de smash burger para Portugal. Bordas crocantes, hambúrgueres suculentos e sabor inesquecível em cada dentada.",
-            quickLinks: "Links Rápidos",
-            findUs: "Encontre-nos",
-            location: "Odivelas, Lisboa",
-            country: "Portugal",
-            rights: "Todos os direitos reservados.",
+            description: "L'expérience du vrai smash burger débarque à Marrakech. 100% fait maison, du croustillant et du jus dans chaque bouchée.",
+            quickLinks: "Liens Rapides",
+            findUs: "Nous Trouver",
+            location: "Guéliz, Marrakech",
+            country: "Maroc",
+            rights: "Tous droits réservés.",
             links: [
-                { name: "Início", href: "#" },
-                { name: "Sobre", href: "#about" },
-                { name: "Menu", href: "#menu" },
-                { name: "Encontre-nos", href: "#find-us" },
+                { name: "Accueil", href: "#" },
+                { name: "À Propos", href: "#about" },
+                { name: "Carte", href: "#menu" },
+                { name: "Nous Trouver", href: "#find-us" },
             ]
         }
     }

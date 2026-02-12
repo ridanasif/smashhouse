@@ -7,7 +7,7 @@ export const LanguageProvider = ({ children }) => {
     // Default to EN, or verify if localStorage has a preference
     const [language, setLanguage] = useState(() => {
         const savedLang = localStorage.getItem('language');
-        return savedLang === 'PT' ? 'PT' : 'EN';
+        return savedLang === 'FR' ? 'FR' : 'EN';
     });
 
     useEffect(() => {
@@ -15,7 +15,7 @@ export const LanguageProvider = ({ children }) => {
     }, [language]);
 
     const toggleLanguage = (lang) => {
-        if (lang === 'EN' || lang === 'PT') {
+        if (lang === 'EN' || lang === 'FR') {
             setLanguage(lang);
         }
     };

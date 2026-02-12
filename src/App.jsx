@@ -18,15 +18,19 @@ function App() {
   return (
     <LanguageProvider>
       <div className="flex flex-col min-h-screen">
-        <TopBanner />
-        <Navbar />
-        <Carousel />
-        <Ticker />
-        <About />
-        <HookedBanner />
-        <Menu />
-        <FindUs />
-        <ImageTicker />
+        <header className="fixed top-0 left-0 right-0 z-50">
+          <TopBanner />
+          <Navbar />
+        </header>
+        <main>
+          <Carousel />
+          <Ticker />
+          <About />
+          <HookedBanner />
+          <Menu />
+          <FindUs />
+          <ImageTicker />
+        </main>
         <Footer />
         <Analytics />
       </div>
